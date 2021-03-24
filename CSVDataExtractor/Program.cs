@@ -9,7 +9,8 @@ namespace CSVDataExtractor
         static void Main(string[] args)
         {
             string DataLocation = "C:\\Users\\rfaller\\Desktop\\TestData.csv";
-            
+            string JsonString;
+
             //check to see if the Data location contains CSV if so then read the columns Dynamically, and then populate the data against these into the DataModel.
             if (DataLocation.Contains(".csv"))
             {
@@ -55,14 +56,15 @@ namespace CSVDataExtractor
 
                 try
                 {
-                    Console.WriteLine("Export the Data to JSON");
-                    ExportData.ExportJson(Data);
+                    Console.WriteLine("Export the Data as Json");
+                    JsonString = ExportData.ExportJson(Data);
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Exporting Data Failed, please see the following message:");
                     Console.WriteLine(ex);
                 }
+
             }
         }
     }

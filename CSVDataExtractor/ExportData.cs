@@ -10,7 +10,9 @@ namespace CSVDataExtractor
     {
         public static string ExportJson(List<CsvFileDto> Data)
         {
-            var json = Newtonsoft.Json.JsonConvert.SerializeObject(Data);
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(Data,Formatting.Indented);
+            Console.WriteLine(json);
+            Console.WriteLine("Application ran successfully Json Result:");
             return json;
         }
 
